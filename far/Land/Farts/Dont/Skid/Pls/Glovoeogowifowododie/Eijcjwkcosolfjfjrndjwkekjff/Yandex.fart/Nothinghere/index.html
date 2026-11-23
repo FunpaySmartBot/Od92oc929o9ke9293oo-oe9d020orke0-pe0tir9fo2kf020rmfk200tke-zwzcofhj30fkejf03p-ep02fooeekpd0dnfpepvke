@@ -4090,6 +4090,9 @@
       renderLogs();
       addFlashLog('SWD', 'koshk-snsc Flasher ready. Auto-detects ESC (SNSC 2.3) / BMS / ESP32.');
     });
-  </script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  }
+</script>
 </body>
 </html>
